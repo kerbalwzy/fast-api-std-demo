@@ -8,10 +8,11 @@ from pydantic import BaseModel, validator, validate_email
 
 
 class SignUpParam(BaseModel):
+    account: str
+    nickname: str
     email: str
     password: str
     password_confirm: str
-    avatar: str = None
 
     @validator('email')
     def check_email(cls, v):
